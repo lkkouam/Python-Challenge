@@ -1,0 +1,7 @@
+Financial Analysis 
+------------------------ 
+Total Month: 41
+Total Month: $18971412.0
+Average Revenue: $462717.37
+Greatest Increase: 13-Dec ($977084) 
+Greatest Decrease: 14-Aug ($-1172384)

@@ -12,7 +12,8 @@ for numToCheck in fileNumbers:
 
     # Grab budget CSV file
     csvpath = os.path.join('Resources', 'budget_data_' + numToCheck + '.csv')
-
+    print (csvpath)
+    print("------------------------------")
      # Create new CSV
     newbudgetDataTXT = os.path.join('output', 'budget_data_' + numToCheck + '.txt')
 
@@ -30,11 +31,10 @@ for numToCheck in fileNumbers:
 
         # CSV reader specifies delimiter and variable that holds contents
         csvreader = csv.reader(csvfile, delimiter=',')
-
+        
         next(csvreader, None)
         #  Each row is read as a row
         for row in csvreader:
-        
             rowcount = rowcount +1
             Revenue.append(row[1])
             Date.append(row[0])
@@ -58,22 +58,23 @@ for numToCheck in fileNumbers:
                 Min = Revenue[int(x)]
                 Date_Min = Date[int(x)]
 
-Average_revenue = "{0:.2f}".format(float(Total_revenue / rowcount))
+    Average_revenue = "{0:.2f}".format(float(Total_revenue / rowcount))
 
 
-print("Total Month: " + str(rowcount))
-print("Total Revenue: $" + str(Total_revenue))
-print("Average Revenue: $" + str(Average_revenue))
-print("Greatest Increase: " + str(Date_Max) +" ($" + str(Max) +")")
-print("Greatest Decrease: " + str(Date_Min) +" ($" + str(Min) +")")
+    print("Total Month: " + str(rowcount))
+    print("Total Revenue: $" + str(Total_revenue))
+    print("Average Revenue: $" + str(Average_revenue))
+    print("Greatest Increase: " + str(Date_Max) +" ($" + str(Max) +")")
+    print("Greatest Decrease: " + str(Date_Min) +" ($" + str(Min) +")")
+    print("------------------------------")
 
-#Writing the results of the in a text file
-with open(newbudgetDataTXT, 'w') as text_file:
-    text_file.write ("Financial Analysis \n")
-    text_file.write ("------------------------ \n")
+    #Writing the results of the in a text file
+    with open(newbudgetDataTXT, 'w') as text_file:
+        text_file.write ("Financial Analysis \n")
+        text_file.write ("------------------------ \n")
 
-    text_file.write("Total Month: " + str(rowcount) + "\n")
-    text_file.write("Total Month: $" + str(Total_revenue) + "\n")
-    text_file.write("Average Revenue: $" + str(Average_revenue) + "\n")
-    text_file.write("Greatest Increase: " + str(Date_Max) +" ($" + str(Max) +") \n")
-    text_file.write("Greatest Decrease: " + str(Date_Min) +" ($" + str(Min) +")\n")
+        text_file.write("Total Month: " + str(rowcount) + "\n")
+        text_file.write("Total Month: $" + str(Total_revenue) + "\n")
+        text_file.write("Average Revenue: $" + str(Average_revenue) + "\n")
+        text_file.write("Greatest Increase: " + str(Date_Max) +" ($" + str(Max) +") \n")
+        text_file.write("Greatest Decrease: " + str(Date_Min) +" ($" + str(Min) +")\n")
