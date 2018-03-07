@@ -1,0 +1,7 @@
+Financial Analysis 
+------------------------ 
+Total Month: 86
+Total Month: $36973911.0
+Average Revenue: $429929.20
+Greatest Increase: Dec-2013 ($998347) 
+Greatest Decrease: Sep-2010 ($-1063151)
